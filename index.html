@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Bootstrap CSS -->
+		
+		<link href='https://fonts.gstatic.com' rel='preconnect'/>
+<link href='https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@600&amp;display=swap' rel='stylesheet'/> 
+    
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+			crossorigin="anonymous"
+		/>
+
+    <link rel="shortcut icon" href="./img/title_icon.png" />
+		<style>
+			/* build your own custom Bootstrap theme:
+   https://themestr.app
+*/
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+
+				100% {
+					opacity: 1;
+				}
+			}
+
+			.wrapper .row {
+				height: 50%;
+			}
+
+			.wrapper .col {
+				height: 100%;
+				opacity: 0;
+			}
+
+      #wrapperDiv{
+        transition: padding 0.5s ease-in-out;
+      }
+
+			.wrapper .row:nth-of-type(1) .col:nth-of-type(1) {
+				animation: fadeIn 1s ease-in-out 0s forwards;
+			}
+
+			.wrapper .row:nth-of-type(1) .col:nth-of-type(2) {
+				animation: fadeIn 1s ease-in-out 0.25s forwards;
+			}
+
+			.wrapper .row:nth-of-type(1) .col:nth-of-type(3) {
+				animation: fadeIn 1s ease-in-out 0.5s forwards;
+			}
+
+			.wrapper .row:nth-of-type(2) .col:nth-of-type(1) {
+				margin-left: 8.25%;
+				animation: fadeIn 1s ease-in-out 0.75s forwards;
+			}
+
+			.wrapper .row:nth-of-type(2) .col:nth-of-type(2) {
+				margin-right: 8.25%;
+				animation: fadeIn 1s ease-in-out 1s forwards;
+			}
+
+			.wrapper .row:nth-of-type(2) {
+				margin-top: -6.25%;
+			}
+
+			.hex:hover {
+				fill: blue;
+			}
+
+			svg:hover {
+				transform: scale(1.1, 1.1);
+			}
+
+			svg {
+				transition: transform 0.25s ease-in;
+				/*border: 1px solid red;*/
+			}
+
+			.wrapper .row:nth-of-type(1) .col:nth-of-type(2) svg polygon {
+				fill: #f1c40f;
+			}
+
+			.wrapper .row:nth-of-type(1) .col:nth-of-type(3) svg polygon {
+				fill: #b8e994;
+			}
+
+			.wrapper .row:nth-of-type(2) .col:nth-of-type(1) svg polygon {
+				fill: #e55039;
+			}
+
+			.wrapper .row:nth-of-type(2) .col:nth-of-type(2) svg polygon {
+				fill: #38ada9;
+			}
+
+			.header {
+				height: 200px;
+				opacity: 0.5;
+			}
+
+			body,
+			div.container-fluid {
+				height: 100vh;
+				overflow: hidden;
+			}
+
+			body {
+				background: url("bg.jpg");
+				background-size: cover;
+			}
+
+
+      .borderSpam
+    {
+      z-index: -1;
+    }
+
+
+
+    .box {
+      transform: translate(-3%, 7%);
+      background: #ffffffa6;
+      box-sizing: border-box;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgb(49 180 193);
+      border: 2px solid #73e4cf;
+      color: white;
+    }
+
+    .box:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      /* left:-100%; */
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      transition: 0.5s;
+      pointer-events: none;
+    }
+
+    .box:hover:before {
+      /* left:-50%; */
+      transform: skewX(-5deg);
+    }
+
+
+    .box .content {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      border: 1px solid #f0a591;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 5px 10px rgba(9, 0, 0, 0.5);
+
+    }
+
+    .box span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      box-sizing: border-box;
+
+    }
+.box:hover {
+  opacity: 1;
+  background-color: rgb(226, 226, 238);
+  }
+    .box span:nth-child(1) {
+      transform: rotate(0deg);
+    }
+
+    .box span:nth-child(2) {
+      transform: rotate(90deg);
+    }
+
+    .box span:nth-child(3) {
+      transform: rotate(180deg);
+    }
+
+    .box span:nth-child(4) {
+      transform: rotate(270deg);
+    }
+
+    .box span:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: #52b668;
+      animation: animate 4s linear infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+
+      50% {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      50.1% {
+        transform: scaleX(1);
+        transform-origin: right;
+
+      }
+
+      100% {
+        transform: scaleX(0);
+        transform-origin: right;
+
+      }
+    }
+
+    @media only screen and (max-width: 620px) {
+
+
+body {
+  font-family: sans-serif;
+  background-size: cover;
+}
+
+#rotatedRectangle
+{
+  height: 278px !important;
+}
+
+
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
+
+
+
+
+
+
+:root{
+  --width: 100%;
+  --height: 100%;
+  --border-width: 200px;
+  --border-height: 200px;
+
+}
+
+html,body{
+  /* background:radial-gradient(mistyrose,pink); */
+  height:100%;
+  width:100%;
+  position:relative;
+  overflow:hidden;
+}
+
+.gallery{
+  position:relative;
+  height:100%;
+  width:100%;
+}
+
+.gallery:after{
+  content:'';
+}
+
+.shadow{
+  position: absolute;
+  top: 500px;
+  left: 100px;
+  width: 500px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(#805d78,rgba(0,0,0,0) 70%);
+}
+
+img.h1{
+  width:var(--width);
+  height:var(--height);
+}
+
+.clipped-border{
+  -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+   clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+   padding:5px;
+   background:linear-gradient(grey,lightgrey);
+   width:var(--border-width);
+   height:var(--border-height);
+   max-height:338px;
+   max-width:349px;
+   height: var(--height);
+   width:var(--width);
+   transition:transform 0.2s;
+   position:absolute;
+   cursor:pointer;
+}
+
+
+
+.clipped-border:before{
+  content:'';
+  position:absolute;
+  opacity:0.5;
+  width:470px;
+  height:70px;
+  background:white;
+  top:0;
+  left:0;
+  z-index:1;
+  transform:rotate(45deg);
+  transition:transform 0.5s;
+}
+
+.clipped-border:hover:before{
+  transform: translate(-100px,400%) rotate(45deg);
+  transition:transform 0.5s;
+}
+
+/* one */
+.clipped-border:nth-child(1){
+  top:0;
+  left:170px;
+}
+
+/* four */
+.clipped-border:nth-child(2){
+  top:275px;
+  left:330px;
+}
+
+/* second */
+.clipped-border:nth-child(3){
+  top:0;
+  left:510px;
+}
+
+/* five */
+.clipped-border:nth-child(4){
+  top:275px;
+  left:680px;
+}
+
+/* third */
+.clipped-border:nth-child(5){
+  top:0;
+  left:847px;
+}
+
+#clipped {
+-webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+
+}
+
+.clipped-border:hover{
+  transform:scale(1.2);
+  transition:transform 0.2s;
+  z-index:10;
+}
+
+
+@media screen and (max-width:500px){
+  .clipped-border{
+    width:100px;
+    height:100px;
+  }
+  
+  .clipped-border:nth-child(1){
+  top:0;
+  left:0;
+}
+  .clipped-border:nth-child(2){
+    top:0;
+    left:100px;
+  }
+  
+  .clipped-border:nth-child(3){
+    left:200px;
+  }
+  
+  .clipped-border:nth-child(4){
+    top:82px;
+    left:50px;
+  }
+  
+  .clipped-border:nth-child(5){
+    top:82px;
+    left:150px;
+  }
+} 
+
+
+html,body {
+    width:100vw;
+    height: 100vh;
+    margin: 0;
+}
+#myVideo {
+    position:fixed;
+    z-index: -1;
+}
+@media (min-aspect-ratio: 16/9) {
+    #myVideo {
+        width:100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9) {
+    #myVideo { 
+        width:auto;
+        height: 100%;
+    }
+}
+@media (max-width: 767px) {
+    #myVideo {
+        /* display: none; */
+    }
+    body {
+        /* background: url('poster.jpg'); */
+        background-size: cover;
+    }
+}
+
+		</style>
+		<title>Brain Storm Vesak Kalapaya 2021</title>
+	</head>
+
+	<body>
+    <video autoplay muted loop id="myVideo">
+      <source src="./img/k.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+		<div class="container-fluid min-vh-100 padding d-flex flex-column">
+      
+			<div class="row ">
+
+        <nav class="navbar navbar-expand-lg navbar-light justify-content-end">
+          <a class="navbar-brand" href="../index.html"><img src="./img/home_icon.png" height="40px" width="40px"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" style="flex-grow: inherit;" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
+              <li class="nav-item" style="margin-right: 14px;">
+                <div class="box">
+                  <span class="borderSpam"></span>
+                  <span  class="borderSpam" id="rotatedRectangle"></span>
+                  <span  class="borderSpam"></span>
+                  <span  class="borderSpam" id="rotatedRectangle"></span>
+                  <a class="nav-link" href="./pages/vesakThorana.html">වෙසක් තොරණ</a>
+                </div>
+              </li>
+             
+           
+              <li class="nav-item" style="margin-right: 14px; pointer-events: auto">
+                <div class="box">
+                  <span  class="borderSpam"></span>
+                  <span  class="borderSpam" id="rotatedRectangle"></span>
+                  <span  class="borderSpam"></span>
+                  <span  class="borderSpam" id="rotatedRectangle"></span>
+                  <a class="nav-link" href="https://www.brainstormlk.tk/search/label/%E0%B7%80%E0%B7%99%E0%B7%83%E0%B6%9A%E0%B7%8A%20%E0%B6%B1%E0%B7%92%E0%B6%BB%E0%B7%8A%E0%B6%B8%E0%B7%8F%E0%B6%AB?&max-results=7">වෙසක් නිර්මාණ</a>
+                </div>
+              </li>
+              
+            </ul>
+          </div>
+        </nav>
+      </div>
+			<div class="row flex-grow-1 wrapper-row">
+				<div
+					id="wrapperDiv"
+					class="col-md-8 offset-md-4 col-sm-10 offset-sm-2 wrapper"
+					onresize="calcHexDimms()"
+          style=" margin-top: 4%;"
+				>
+					<!-- <div class="row d-flex justify-content-between">
+						<div class="col col-12 col-sm-4">
+							<a href="http://www.google.com">
+								<svg height="100%" width="100%" viewBox="0 0 100 100">
+									<polygon
+										height="100%"
+										width="100%"
+										class="hex"
+										points="50 0, 100 25,100 75, 50 100, 0 75,0 25"
+										fill="#2ecc71"
+									/>
+								</svg>
+							</a>
+						</div>
+						<div class="col col-12 col-sm-4">
+							<svg height="100%" width="100%" viewBox="0 0 100 100">
+								<polygon
+									class="hex"
+									points="50 0, 100 25,100 75, 50 100, 0 75,0 25"
+									fill="#2ecc71"
+								/>
+							</svg>
+						</div>
+						<div class="col col-12 col-sm-4">
+							<svg
+								height="100%"
+								width="100%"
+								viewBox="0 0 100
+                      100"
+							>
+								<polygon
+									class="hex"
+									points="50 0, 100 25,100 75, 50 100, 0 75,0 25"
+									fill="#2ecc71"
+								/>
+							</svg>
+						</div>
+					</div>
+					<div class="row d-flex justify-content-center">
+						<div class="col col-4">
+							<svg height="100%" width="100%" viewBox="0 0 100 100">
+								<polygon
+									class="hex"
+									points="50 0, 100 25,100 75, 50 100, 0 75,0 25"
+									fill="#2ecc71"
+								/>
+							</svg>
+						</div>
+						<div class="col col-4">
+							<svg height="100%" width="100%" viewBox="0 0 100 100">
+								<polygon
+									class="hex"
+									points="50 0, 100 25,100 75, 50 100, 0 75,0 25"
+									fill="#2ecc71"
+								/>
+							</svg>
+						</div>
+					</div> -->
+
+
+
+
+
+
+					
+
+		<!-- Optional JavaScript; choose one of the two! -->
+
+		<!-- Option 1: Bootstrap Bundle with Popper -->
+	
+    <script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+			crossorigin="anonymous"
+		></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			function calcHexDimms() {
+				var wrapper = document.getElementById("wrapperDiv");
+				var heightAdjustment =
+					parseFloat(
+						window.getComputedStyle(wrapper).getPropertyValue("padding-top")
+					) +
+					parseFloat(
+						window.getComputedStyle(wrapper).getPropertyValue("padding-bottom")
+					) / 2;
+				var widthAdjustment =
+					parseFloat(
+						window.getComputedStyle(wrapper).getPropertyValue("padding-left")
+					) / 3;
+				var height =
+					document.querySelector("svg").getBoundingClientRect().height +
+					heightAdjustment;
+				var width =
+					document.querySelector("svg").getBoundingClientRect().width +
+					widthAdjustment;
+				var diff = Math.abs(height - width);
+				console.log(height, width, diff);
+				if (height > width) {
+					wrapper.style.paddingTop = `${diff}px`;
+					wrapper.style.paddingBottom = `${diff}px`;
+					wrapper.style.paddingLeft = "0px";
+				} else {
+					wrapper.style.paddingTop = "0px";
+					wrapper.style.paddingBottom = "0px";
+					wrapper.style.paddingLeft = `${diff * 3}px`;
+				}
+			}
+
+			var funcHandlr;
+			window.onresize = function () {
+				clearTimeout(funcHandlr);
+				funcHandlr = setTimeout(calcHexDimms, 100);
+			};
+			window.onload = setTimeout(calcHexDimms, 100);
+		</script> -->
+    <script>
+        $(document).ready(function () {
+
+var divHeight = $('.box').width();
+$('span#rotatedRectangle').each(function () {
+ 
+  var selfP = $(this)[0].parentNode.offsetWidth;
+  var self = $(this);
+
+  self.height(selfP-4);
+
+});
+
+});
+    </script>
+<script>
+    $(document).ready(function() {
+
+    $(".navbar-toggler").click(function(){
+        
+      if($(this).data('clicked')) {
+        $(this).data('clicked', false);
+        $('.collapse').removeClass('show');
+      }
+      else
+      {
+        $(this).data('clicked', true);
+        $('.collapse').addClass('show');
+      }
+       
+
+});
+    });
+</script>
+
+	</body>
+</html>
